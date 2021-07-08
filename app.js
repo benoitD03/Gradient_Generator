@@ -6,6 +6,7 @@ const bodyBackground = document.body;
 const plusBtn = document.querySelector('.plus');
 const minusBtn = document.querySelector('.minus');
 const alertMsg = document.querySelector('span');
+const randomBtn = document.querySelector('.random');
 
 
 let inclinaison = 180;
@@ -29,10 +30,10 @@ rangeInput.addEventListener('input', (e) => {
 })
 
 //******* Ajout et Suppression de couleurs
-plusBtn.addEventListener('click', moreLessColor);
-minusBtn.addEventListener('click', moreLessColor);
+plusBtn.addEventListener('click', addRemoveColor);
+minusBtn.addEventListener('click', addRemoveColor);
 
-function moreLessColor(e) {
+function addRemoveColor(e) {
 
     alertMsg.innerText = "";
     const colorInputs = document.querySelectorAll('.color');
@@ -41,6 +42,7 @@ function moreLessColor(e) {
     if (e.target.className === "plus") {
 
         if (colorInputs.length >= 8) {
+            alertMsg.innerText = "Vous ne pouvez pas générer plus de 8 couleurs";
             return;
         }
 
@@ -61,7 +63,7 @@ function moreLessColor(e) {
     else if (e.target.className === "minus") {
 
         if (colorInputs.length === 2) {
-            alertMsg.innerText = "Il est nécessaire d'avoir 2 couleurs minimum";
+            alertMsg.innerText = "Vous devez sélectionner au minimum 2 couleurs.";
         } else {
             colorInputs[colorInputs.length -1].remove();
             allColors.pop();
@@ -71,4 +73,20 @@ function moreLessColor(e) {
     }
 
 }
+
+
+//******* Afficher des couleurs aléatoires *******
+randomBtn.addEventListener('click', () => {
+
+    const colorInputs = document.querySelectorAll('.color');
+
+    for(let i = 0; i < allColors.length; i++) {
+
+        allColors[i] = `#${Math.floor(Math.random()*18379314).toString(16)}`;
+        colorInputs[i].value = allColors[i].toUpperCase();
+        colorInputs[i].style.background = allColors[i].toUpperCase();
+        bodyBackground.style.background = `linear-gradient(${inclinaison}deg, ${allColors})`;
+
+    }
+})
 
