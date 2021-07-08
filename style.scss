@@ -60,6 +60,30 @@ h1 {
     }
     p {
         margin-left: 10px;
-    }
-    
+    }  
 }
+
+//3 BUTTONS
+.buttons-container {
+    @include mixContainer();
+}
+
+.plus-minus {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    .plus, .minus {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        padding: 5px;
+        margin: 0 10px;
+        cursor: pointer;
+        i {
+            pointer-events: none;
+        }
+    }
+}
+
