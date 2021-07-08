@@ -1,0 +1,65 @@
+@mixin flexboxCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin mixContainer {
+    @include flexboxCenter();
+    flex-direction: column;
+    margin-bottom: 30px;
+    height: auto;
+    max-width: 500px;
+    min-width: 300px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    @include flexboxCenter();
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+h1 {
+    text-align: center;
+    margin: 50px 0 50px 0;
+    font-size: 40px;
+}
+
+// INPUT COLOR
+.color-container {
+    @include mixContainer();
+    margin-top: 150px;
+    .color {
+        width: 100%;
+        margin: 10px 0;
+        font-weight: bold;
+        border-radius: 30px;
+        padding: 15px;
+        font-size: 20px;
+        outline: none;
+        border: 1px solid #f1f1f1; 
+    }
+}
+
+//INPUT RANGE
+.range-container {
+    @include mixContainer();
+    flex-direction: row;
+    margin-left: 10px;
+    .range-deg {
+        width: 80%;
+        border-radius: 30px;
+        font-size: 20px;
+        outline: none;
+        border: 1px solid #f1f1f1; 
+    }
+    p {
+        margin-left: 10px;
+    }
+    
+}

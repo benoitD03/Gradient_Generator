@@ -1,3 +1,66 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px 0 50px 0;
+  font-size: 40px;
+}
+
+.color-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  height: auto;
+  max-width: 500px;
+  min-width: 300px;
+  margin-top: 150px;
+}
+.color-container .color {
+  width: 100%;
+  margin: 10px 0;
+  font-weight: bold;
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid #f1f1f1;
+}
+
+.range-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 30px;
+  height: auto;
+  max-width: 500px;
+  min-width: 300px;
+  flex-direction: row;
+  margin-left: 10px;
+}
+.range-container .range-deg {
+  width: 80%;
+  border-radius: 30px;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid #f1f1f1;
+}
+.range-container p {
+  margin-left: 10px;
+}
 
 /*# sourceMappingURL=style.css.map */

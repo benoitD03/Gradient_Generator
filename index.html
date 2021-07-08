@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS Gradient-Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="container">
+
+        <h1>Génerer votre CSS Color Gradient</h1>
+
+        <div class="color-container">
+            <input type="text" data-index="1" maxlength="7" class="color">
+            <input type="text" data-index="2" maxlength="7" class="color">
+        </div>
+
+        <div class="range-container">
+            <input type="range" class="range-deg">
+            <p class="range-value"></p>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
