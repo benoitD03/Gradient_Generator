@@ -31,10 +31,32 @@
             </div>
             <button type="button" class="random">Couleurs aléatoires</button>
         </div>
+
+        <div class="copy">
+            <button class="copyButton" id="copy-button" data-clipboard-target="#post-shortlink" ><i class="far fa-copy fa-2x"></i></button>
+            <input id="post-shortlink" class="copyCode" value=""/>
+           
+        </div>
+
         <span></span>
     </div>
 
     <script src="app.js"></script>
+
+    <script src="dist/clipboard.min.js"></script>
+
+    <script>
+        var clipboard = new ClipboardJS('.copyButton');
+  
+        clipboard.on('success', function (e) {
+          console.log(e);
+          alert("Code copié avec succès !");
+        });
+  
+        clipboard.on('error', function (e) {
+          console.log(e);
+        });
+      </script>
 </body>
 
 </html>

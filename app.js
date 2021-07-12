@@ -7,6 +7,8 @@ const plusBtn = document.querySelector('.plus');
 const minusBtn = document.querySelector('.minus');
 const alertMsg = document.querySelector('span');
 const randomBtn = document.querySelector('.random');
+const copyCode = document.querySelector('.copyCode');
+const copyButton = document.querySelector('.copyButton');
 
 
 let inclinaison = 180;
@@ -20,12 +22,13 @@ colorInputs[0].style.background = allColors[0];
 colorInputs[1].value = allColors[1];
 colorInputs[1].style.background = allColors[1];
 bodyBackground.style.background = `linear-gradient(${inclinaison}deg, ${allColors})`;
+copyCode.value = `background : linear-gradient(${inclinaison}deg, ${allColors})`;
 
 //******* Inclinaison *******
 rangeInput.addEventListener('input', (e) => {
     inclinaison=e.target.value * 3.6;
     bodyBackground.style.background = `linear-gradient(${inclinaison}deg, ${allColors})`;
-
+    copyCode.value = `background : linear-gradient(${inclinaison}deg, ${allColors})`;
     rangeP.innerText = `${Math.floor(inclinaison)}°`;
 })
 
@@ -57,6 +60,7 @@ function addRemoveColor(e) {
 
         allColors.push(newColor.value);
         bodyBackground.style.background = `linear-gradient(${inclinaison}deg, ${allColors})`;
+        copyCode.value = `background : linear-gradient(${inclinaison}deg, ${allColors})`;
         indexColor++;
         
         newColor.addEventListener('input', updateColors);
@@ -74,6 +78,7 @@ function addRemoveColor(e) {
             inputsColor[inputsColor.length -1].remove();
             indexColor--;
             bodyBackground.style.background = `linear-gradient(${inclinaison}deg, ${allColors})`;
+            copyCode.value = `background : linear-gradient(${inclinaison}deg, ${allColors})`;
             console.log(inputsColor.length);
         }
     }
@@ -96,6 +101,7 @@ function updateColors(e) {
     allColors[currentIndex - 1] = e.target.value.toUpperCase();
     e.target.style.background = allColors[currentIndex - 1];
     bodyBackground.style.background = `linear-gradient(${inclinaison}deg, ${allColors})`;
+    copyCode.value = `background : linear-gradient(${inclinaison}deg, ${allColors})`;
 
 }
 
@@ -110,7 +116,10 @@ randomBtn.addEventListener('click', () => {
         colorsInputs[i].value = allColors[i].toUpperCase();
         colorsInputs[i].style.background = allColors[i].toUpperCase();
         bodyBackground.style.background = `linear-gradient(${inclinaison}deg, ${allColors})`;
+        copyCode.value = `background : linear-gradient(${inclinaison}deg, ${allColors})`;
 
     }
 })
+
+
 
