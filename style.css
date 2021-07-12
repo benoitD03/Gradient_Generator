@@ -1,7 +1,18 @@
+@keyframes shadow-inset {
+  0% {
+    -webkit-box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    -webkit-box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 0.5);
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Otomanopee One", sans-serif;
 }
 
 .container {
@@ -9,13 +20,22 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 h1 {
   text-align: center;
   margin: 50px 0 50px 0;
   font-size: 40px;
+}
+
+span {
+  margin-top: 15px;
+}
+
+p {
+  margin: 10px;
+  text-align: center;
 }
 
 .color-container {
@@ -39,6 +59,9 @@ h1 {
   outline: none;
   border: 1px solid #f1f1f1;
 }
+.color-container .color:focus {
+  border: 2px solid #f1f1f1;
+}
 
 .range-container {
   display: flex;
@@ -58,6 +81,7 @@ h1 {
   font-size: 20px;
   outline: none;
   border: 1px solid #f1f1f1;
+  cursor: pointer;
 }
 .range-container p {
   margin-left: 10px;
@@ -89,6 +113,10 @@ h1 {
   margin: 0 10px;
   cursor: pointer;
 }
+.plus-minus .plus:hover, .plus-minus .minus:hover {
+  -webkit-animation: shadow-inset 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: shadow-inset 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 .plus-minus .plus i, .plus-minus .minus i {
   pointer-events: none;
 }
@@ -102,25 +130,34 @@ h1 {
   font-size: 20px;
   cursor: pointer;
 }
+.random:hover {
+  -webkit-animation: shadow-inset 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: shadow-inset 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
 
 .copy {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
 }
 .copy .copyCode {
   text-align: center;
-  border-radius: 15px;
-  padding: 10px;
+  border-radius: 0 15px 15px 0;
+  padding: 12px;
   font-size: 20px;
   outline: none;
   margin: 20px auto;
   background: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  border: none;
 }
 .copy .copyButton {
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 15px 0 0 15px;
   cursor: pointer;
+  border: none;
+  border-right: 1px solid #333;
 }
 
 /*# sourceMappingURL=style.css.map */
